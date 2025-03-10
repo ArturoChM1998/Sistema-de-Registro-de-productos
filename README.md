@@ -48,4 +48,5 @@ Dirigase a: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 2. Indique la contraseña en la variable correspondiente, modifique las otras variables si ha cambiado el puerto o ingreso con otro usuario
 
 ### Probar 
-Ingrese a la siguiente dirección en el navegador para visualizar el proyecto: "http://localhost/src/
+1. Ejecute la aplicacion XAMPP Control Panel e inicie el servicio "Apache", si ya estaba iniciado reinicielo nuevamente para que considere los cambios en las extensiones
+2. Ingrese a la siguiente dirección en el navegador para visualizar el proyecto: "http://localhost/src/
