@@ -6,7 +6,6 @@ use Src\Modelos\Material;
 
 include("AutoCargadorClases.php");
 AutoCargadorClases::RegistrarClases();
-
 $listadoMateriales = [
     new Material("Plástico", "1"),
     new Material("Vidrio", "2"),
@@ -15,4 +14,4 @@ $listadoMateriales = [
     new Material("Algódon", "5"),
 ];
 
-//require("index.html");
+require("index.html");
