@@ -7,7 +7,6 @@ Contiene el código fuente del proyecto solicitado junto a las instrucciones par
 - PostgreSQL 17
 - XAMPP 8.2.12
 - GIT
-> Se utilizo XAMPP para efectos de desarrollo y pruebas en local, el cual incluye el lenguaje de programación citado y un servidor Apache.
 
 # Instalación de XAMPP, clonación del proyecto e instalación base de datos PostgreSQL 
 ### Instalar XAMPP
