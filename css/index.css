@@ -1,0 +1,120 @@
+/* Elementos */
+* {
+    border-radius: 5px;
+}
+html {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+main {
+    padding: 4vh 15vw;
+}
+input, select, textarea {
+    border: 1.2pt solid black;
+    padding: 5px;
+}
+
+/* Clases */
+.contenedor-formulario {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2vw;
+    grid-row-gap: 3.5vh;
+    border: 1.2pt solid black;
+    padding: 30px;
+    box-shadow: 0 0 10px 2px gray;
+}
+.contenedor-campo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 10px;
+}
+
+.contenedor-listado-checkboxes {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.contenedor-listado-checkboxes > li {
+
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 7px;
+    justify-content: left;
+}
+.label-checkbox{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.margen-y-0 {
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+}
+.margen-x-14 {
+    margin: 0 14px;
+}
+.item-espacio-completo {
+    grid-column: 1 / -1;
+}
+.flexbox-contenido-centro {
+    display: flex;
+    justify-content: center;
+}
+
+/* IDs */
+#btn_guardar_producto {
+    background: #1aab8a;
+    font-size: 16px;
+    height: 10vh;
+    border: 0;
+    width: 60%;
+    color: white;
+}
+
+/* Media queries */
+@media (max-width: 426px) {
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    .test2 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 521px) {
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    .contenedor-listado-checkboxes > li {
+        width: 50%;
+    }
+}
+
+@media (max-width: 630px) {
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .contenedor-listado-checkboxes > li{
+        width: 50%;
+    }
+}
+
+@media (max-width: 654px) {
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+

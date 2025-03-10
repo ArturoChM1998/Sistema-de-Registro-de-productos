@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<main>
+    <form id="formulario_creacion_producto" class="contenedor-formulario">
+            <div class="item-espacio-completo flexbox-contenido-centro">
+                <h1>Formulario de Producto</h1>
+            </div>
+            <div class="contenedor-campo">
+                <label for="input_codigo_producto">Código</label>
+                <input class="input" type="text" name="codigo_producto" id="input_codigo_producto"/>
+            </div>
+            <div class="contenedor-campo">
+                <span class="">
+                    <label for="input_nombre_producto">Nombre</label>
+                </span>
+                <input class="input" type="text" name="nombre_producto" id="input_nombre_producto"/>
+            </div>
+            <div class="contenedor-campo">
+                <label for="select_bodega_producto">Bodega</label>
+                <select class="select" name="bodega_producto" id="select_bodega_producto">
+                    <option selected disabled value="-1"></option>
+                </select>
+            </div>
+            <div class="contenedor-campo">
+                <label for="select_sucursal_bodega_producto">Sucursal</label>
+                <select class="select" name="sucursal_bodega_producto" id="select_sucursal_bodega_producto">
+                    <option selected disabled value="-1"></option>
+                </select>
+            </div>
+            <div class="contenedor-campo">
+                <label for="select_moneda_precio_producto">Moneda</label>
+                <select class="select" name="moneda_precio_producto" id="select_moneda_precio_producto">
+                    <option selected disabled value="-1"></option>
+                </select>
+            </div>
+            <div class="contenedor-campo">
+                <label for="input_precio_producto">Precio</label>
+                <input class="input" name="precio_producto" id="input_precio_producto"/>
+            </div>
+            <div class="item-espacio-completo ">
+                <label>Materiales del producto</label>
+                <ul class="contenedor-listado-checkboxes">
+                    <?php foreach($listadoMateriales as $material): ?>
+                        <li>
+                            <label class="label-checkbox" for="<?=$material -> id;?>"><?=$material -> nombre;?></label>
+                            <input type="checkbox" name="checkbox_materiales" id="<?=$material -> id;?>" value="<?=$material -> id;?>" />
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="item-espacio-completo contenedor-campo">
+                <label for="textarea_descripcion_producto">Descripción</label>
+                <textarea rows="3" class="input" id="textarea_descripcion_producto"></textarea>
+            </div>
+            <div class="item-espacio-completo flexbox-contenido-centro">
+                <button id="btn_guardar_producto" type="submit">Crear producto</button>
+            </div>
+    </form>
+    </main>
+</body>
+</html>
+<script type="text/javascript" src="js/formulario.js"></script>
