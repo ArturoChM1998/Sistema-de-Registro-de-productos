@@ -1,0 +1,55 @@
+/* Creación de tablas */
+CREATE TABLE bodega(
+	id_bodega INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE sucursal_bodega(
+	id_sucursal INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	id_bodega INTEGER NOT NULL,
+	nombre VARCHAR(50),
+	CONSTRAINT FK_SUCURSAL_BODEGA FOREIGN KEY(id_bodega) REFERENCES bodega(id_bodega)
+);
+
+CREATE TABLE moneda(
+	id_moneda INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	nombre VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE producto(
+	id_producto INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	id_sucursal_bodega INTEGER NOT NULL,
+	id_moneda INTEGER NOT NULL,
+	codigo VARCHAR(15) NOT NULL,
+	nombre VARCHAR(50) NOT NULL,
+	precio NUMERIC(9, 2) NOT NULL,
+	descripcion VARCHAR(1000) NOT NULL,
+	CONSTRAINT FK_SUCURSAL_BODEGA_PRODUCTO FOREIGN KEY(id_sucursal_bodega) REFERENCES sucursal_bodega(id_sucursal),
+	CONSTRAINT FK_MONEDA_PRECIO_PRODUCTO FOREIGN KEY(id_moneda) REFERENCES moneda(id_moneda)
+);
+
+/* Poblado de datos */
+INSERT INTO public.bodega(nombre)
+	VALUES 
+	('Bodega Santiago'),
+	('Bodega Concepción'),
+	('Bodega Chillan');
+
+INSERT INTO public.sucursal_bodega(id_bodega, nombre)
+	VALUES 
+	(1, 'Meiggs'),
+	(1, 'Franklin'),
+	(1, 'Yungay'),
+	(2, 'Tucapel'),
+	(2, 'Nonguén'),
+	(2, 'Villuco'),
+	(3, 'San Nicolás'),
+	(3, 'Pinto'),
+	(3, 'La Castilla');
+
+INSERT INTO public.moneda(nombre)
+	VALUES 
+	('Peso chileno'),
+	('Dólar estadounidense'),
+	('Dólar canadiense'),
+	('Euro');
